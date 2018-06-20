@@ -204,8 +204,9 @@ document.getElementById('gamma-slider').oninput = (function () {
     document.getElementById('gamma-value').innerHTML = this.value;
 });
 
-document.getElementById('dark-mode-bool').oninput = (function () {
-	document.getElementById('grid').className = this.checked == true ? "dark" : "";
+document.getElementById('dark-mode-bool').addEventListener('change', function() {
+    var grid = document.getElementById('grid');
+    this.checked ? grid.classList.add('dark') : grid.classList.remove('dark');
 });
 
 //MOUSE EVENTS
